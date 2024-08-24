@@ -1,0 +1,483 @@
+      //  PRODUCT SCHEMA   //
+
+      {
+  "name": "Sample Product",
+  "description": "This is a sample product",
+  "price": "99.99",
+  "category": "'category_id'", 
+  "brand": "Sample Brand",
+  "countInStock": "10",
+  "rating": "4.",
+  "numReviews": "20",
+  "images": "['image_url1', 'image_url2']"
+}
+
+
+
+
+//   USER SCHEMA   //
+
+
+{
+  "name" : "Krishna",
+  "email" : "sinfhghkunkj@gmail.com",
+  "passWord" : "98596"
+}
+
+
+
+
+
+
+import React from 'react'
+import './Header.css';
+
+
+const Header = () => {
+    
+  return (
+    
+    <header className="header">
+      <div className="header__logo">
+        <img src='https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/flipkart-plus_8d85f4.png' alt="Flipkart" />
+         {/* Make sure to place your logo image in the public folder */}
+         <img src='https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png'/>
+      </div>
+      <nav className="header__nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div className="header__search">
+        <input type="text" placeholder="Search for products, brands, and more" />
+        <button>Search</button>
+      </div>
+      <div className="header__cart">
+        <a href="/cart">Cart</a>
+      </div>
+    </header>
+  )
+}
+
+export default Header
+
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #2874f0; /* Flipkart's brand color */
+    color: white;
+  }
+  
+  .header__logo img {
+    height: 40px; /* Adjust based on your logo's size */
+  }
+  
+  .header__nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header__nav li {
+    margin: 0 15px;
+  }
+  
+  .header__nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .header__nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .header__search {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 4px;
+    padding: 5px;
+  }
+  
+  .header__search input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 5px;
+  }
+  
+  .header__search button {
+    border: none;
+    background-color: #ffc107;
+    color: black;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .header__cart a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+
+
+
+
+
+
+material icon : npm i @mui/icons-material   // for icon installtions
+
+                                                 {S L I D E R}
+
+for making caruousel used react library : npm i react-multi-carousel;
+
+
+
+
+
+
+
+
+
+import React from 'react'
+import { styled } from '@mui/material';
+import Carousel from 'react-multi-carousel'
+import { bannerData } from '../../constant/data';
+const responsive = {
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 1,
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 1,
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1,
+    }
+};
+
+const Image = styled('img')(({ theme }) => ({
+    width: '100%',
+    height: 280,
+    [theme.breakpoints.down('sm')]: {
+        objectFit: 'cover',
+        height: 180
+    }
+}));
+
+
+
+const Banner = () => {
+  return (
+    <Carousel
+    swipeable={false}
+            draggable={false}
+            responsive={responsive}
+            infinite={true}
+            autoPlay={true}
+            autoPlaySpeed={4000}
+            keyBoardControl={true}
+            showDots={false}
+            slidesToSlide={1}
+            containerClass="carousel-container"
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
+    >
+        {
+                bannerData.map(image => (
+                    <Image src={image.url} alt="banner" id={image.id} />
+                ))
+            }
+    </Carousel>
+  )
+}
+
+export default Banner
+
+
+
+
+
+// SUPABASE FOR IMAGE CONVERSION IN URL FORMAT;
+
+
+  passWord =   9QE$LmbZpXk6#JT
+anon = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJrZ3Z4a2JpZW1ka2VrcWxrcWRnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjI3NzM4NzQsImV4cCI6MjAzODM0OTg3NH0.VvccPqTIxhLtJotpE3Rn8zqQYpbkToKsYTcwW-PgTzo
+
+  url = https://rkgvxkbiemdkekqlkqdg.supabase.com
+
+
+
+
+
+  // import React from 'react'
+// import { useState } from 'react';
+
+// import {Box,Button,Typography , styled} from '@mui/material'
+// import { ShoppingCart } from '@mui/icons-material';
+
+// //componnents imported
+// import LoginDialog from '../login/LoginDialog';
+
+// const Wrapper = styled(Box)`
+// display:flex;
+// margin:0 3%0 auto;
+// & > button, & > p , & > div{
+// margin-right: 40px;
+// font-size:14px;
+// }
+// `
+// const Container = styled(Box)`
+// display:flex;
+// `
+// const LoginButton = styled(Button)(({ theme }) => ({
+//     color: '#2874f0',
+//     background: '#FFFFFF',
+//     textTransform: 'none',
+//     fontWeight: 600,
+//     borderRadius: 2,
+//     padding: '5px 40px',
+//     height: 32,
+//     boxShadow: 'none',
+//     [theme.breakpoints.down('sm')]: {
+//         background: '#2874f0',
+//         color: '#FFFFFF'
+//     }
+// }));
+
+
+
+// const CustomButtons = () => {
+  
+//   const [openDialog, setOpenDialog] = useState(false);
+//   const handleOpenDialog = () => {
+//     setOpenDialog(true);
+//   };
+
+//   const handleCloseDialog = () => {
+//     setOpenDialog(false);
+//   };
+
+//   return (
+//     <Wrapper>
+//        <LoginButton variant="contained" onClick={handleOpenDialog}  >login</LoginButton>
+//        <Typography style={{ marginTop: 3, width: 135 }}>Become a Seller</Typography>
+//        <Typography style={{ marginTop: 3 }}>More</Typography>
+
+//        <Container>
+//          <ShoppingCart/>
+//         <Typography>Cart</Typography>
+//        </Container>
+//       <LoginDialog open={openDialog}  onClose={handleCloseDialog} />
+//     </Wrapper>
+//   )
+// }
+
+// export default CustomButtons
+
+
+
+// custom buttons jsx // new //
+
+import React, { useState } from 'react';
+import { Box, Button, Typography, styled, Menu, MenuItem, TextField } from '@mui/material';
+import { ShoppingCart } from '@mui/icons-material';
+import LoginDialog from '../login/LoginDialog';
+import { createClient } from '@supabase/supabase-js';
+import axios from 'axios';
+
+const supaBaseUrl = 'https://rkgvxkbiemdkekqlkqdg.supabase.com';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJrZ3Z4a2JpZW1ka2VrcWxrcWRnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjI3NzM4NzQsImV4cCI6MjAzODM0OTg3NH0.VvccPqTIxhLtJotpE3Rn8zqQYpbkToKsYTcwW-PgTzo';
+const supaBase = createClient(supaBaseUrl, supabaseKey);
+
+const Wrapper = styled(Box)
+  display: flex;
+  margin: 0 3% 0 auto;
+  & > button, & > p, & > div {
+    margin-right: 40px;
+    font-size: 14px;
+  }
+;
+
+const Container = styled(Box)
+  display: flex;
+;
+
+const LoginButton = styled(Button)(({ theme }) => ({
+  color: '#2874f0',
+  background: '#FFFFFF',
+  textTransform: 'none',
+  fontWeight: 600,
+  borderRadius: 2,
+  padding: '5px 40px',
+  height: 32,
+  boxShadow: 'none',
+  [theme.breakpoints.down('sm')]: {
+    background: '#2874f0',
+    color: '#FFFFFF',
+  },
+}));
+
+const CustomButtons = () => {
+  const [openDialog, setOpenDialog] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [form, setForm] = useState({
+    productName: '',
+    productDescription: '',
+    price: '',
+    category: '',
+    image: null,
+  });
+
+  const handleOpenDialog = () => {
+    setOpenDialog(true);
+  };
+
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
+  };
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleCloseMenu = () => {
+    setAnchorEl(null);
+  };
+
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    setForm(prevForm => ({
+      ...prevForm,
+      [name]: files ? files[0] : value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!form.image) {
+      alert('Please upload an image.');
+      return;
+    }
+
+    try {
+      const { data, error: uploadError } = await supaBase.storage.from('flipcart').upload(product_images/${form.image.name}, form.image);
+      
+      if (uploadError) {
+        throw uploadError;
+      }
+
+      const imageUrl = ${supaBaseUrl}/storage/v1/object/public/flipcart/product_images/${form.image.name};
+      const response = await axios.post('http://localhost:5000/api/product', { ...form, image: imageUrl });
+
+      console.log(response.data);
+      setAnchorEl(null);
+    } catch (error) {
+      console.error('Error:', error.message);
+    }
+  };
+
+  return (
+    <Wrapper>
+      <LoginButton variant="contained" onClick={handleOpenDialog}>
+        Login
+      </LoginButton>
+      <Typography
+        style={{ marginTop: 3, width: 135 }}
+        onClick={handleClick}
+        aria-controls="seller-menu"
+        aria-haspopup="true"
+      >
+        Become a Seller 
+      </Typography>
+      <Menu
+        id="seller-menu"
+        anchorEl={anchorEl}
+        open={Boolean(anchorEl)}
+        onClose={handleCloseMenu}
+      >
+        <MenuItem>
+          <form onSubmit={handleSubmit}>
+            <Box display="flex" flexDirection="column" width={300}>
+              <TextField
+                label="Product Name"
+                name="productName"
+                value={form.productName}
+                onChange={handleChange}
+                margin="normal"
+                variant="outlined"
+              />
+              <TextField
+                label="Product Description"
+                name="productDescription"
+                value={form.productDescription}
+                onChange={handleChange}
+                margin="normal"
+                variant="outlined"
+                multiline
+                rows={4}
+              />
+              <TextField
+                label="Price" 
+                name="price"
+                value={form.price}
+                onChange={handleChange}
+                required
+              />
+              <TextField
+                label="Category"
+                name="category"
+                value={form.category}
+                onChange={handleChange}
+                required
+              />
+              <Box marginTop={2}>
+                <input
+                  accept="image/*"
+                  id="image-upload"
+                  type="file"
+                  name="image"
+                  onChange={handleChange}
+                  style={{ display: 'none' }}
+                />
+                <label htmlFor="image-upload">
+                  <Button variant="contained" component="span">
+                    Upload Image
+                  </Button>
+                </label>
+                {form.image && <Typography>Selected file: {form.image.name}</Typography>}
+              </Box>
+              <Button type="submit" variant="contained" color="primary" style={{ marginTop: 10 }}>
+                Add Product
+              </Button>
+            </Box>
+          </form>
+        </MenuItem>
+      </Menu>
+      <Typography style={{ marginTop: 3 }}>More</Typography>
+      <Container>
+        <ShoppingCart />
+        <Typography>Cart</Typography>
+      </Container>
+      <LoginDialog open={openDialog} onClose={handleCloseDialog} />
+    </Wrapper>
+  );
+};
+
+export default CustomButtons;
+
+
