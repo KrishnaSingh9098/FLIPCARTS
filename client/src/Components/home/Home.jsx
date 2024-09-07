@@ -3,6 +3,8 @@ import NavBar from './NavBar';
 import Banner from './Banner';
 
 import {Box,styled} from '@mui/material'
+import ProductList from './ProductList';
+import ProductDetail from './ProductDetails';
 
 const Component = styled(Box)`
 padding: 10px;
@@ -15,7 +17,8 @@ const Home = () => {
       <NavBar/>
       <Component>
       <Banner/>
- 
+      <ProductList/>
+     <ProductDetail/>
       </Component>
       
     </div>
